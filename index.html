@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voor Dexx</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
-      font-family: Arial, sans-serif;
-    }
-    button {
-      padding: 20px 40px;
-      font-size: 24px;
-      border: none;
-      border-radius: 12px;
-      background: #ff6b6b;
-      color: white;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    button:hover {
-      background: #ff4949;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Voor Dexx</title>
+<style>
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f0f0f0;
+font-family: Arial, sans-serif;
+}
+button {
+padding: 20px 40px;
+font-size: 24px;
+border: none;
+border-radius: 12px;
+background: #ff6b6b;
+color: white;
+cursor: pointer;
+transition: 0.2s;
+}
+button:hover {
+background: #ff4949;
+}
+</style>
 </head>
 <body>
-  <button id="btn">Voor Dexx</button>
+<button id="btn">Voor Dexx</button>
 
-  <script>
-    // Chaotic confetti effect
-    function spawnConfetti() {
-      for (let i = 0; i < 200; i++) {
-        const confetti = document.createElement("div");
-        confetti.style.position = "fixed";
-        confetti.style.top = Math.random() * -100 + "px"; // random start height
-        confetti.style.left = Math.random() * window.innerWidth + "px";
-        confetti.style.width = Math.random() * 10 + 5 + "px";
-        confetti.style.height = confetti.style.width;
-        confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        confetti.style.opacity = Math.random() * 0.8 + 0.2;
-        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-        confetti.style.transition = `top ${2 + Math.random() * 2}s linear, left ${2 + Math.random() * 2}s linear`; // chaotische beweging
-        document.body.appendChild(confetti);
 
-        // random windrichting
-        const drift = (Math.random() - 0.5) * 200;
+<script>
+// Chaotic confetti effect
+function spawnConfetti() {
+for (let i = 0; i < 200; i++) {
+const confetti = document.createElement("div");
+confetti.style.position = "fixed";
+confetti.style.top = Math.random() * -100 + "px"; // random start height
+confetti.style.left = Math.random() * window.innerWidth + "px";
+confetti.style.width = Math.random() * 10 + 5 + "px";
+confetti.style.height = confetti.style.width;
+confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+confetti.style.opacity = Math.random() * 0.8 + 0.2;
+confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+confetti.style.transition = `top ${2 + Math.random() * 2}s linear, left ${2 + Math.random() * 2}s linear`; // chaotische beweging
+document.body.appendChild(confetti);
 
-        setTimeout(() => {
-          confetti.style.top = window.innerHeight + "px";
-          confetti.style.left = parseFloat(confetti.style.left) + drift + "px";
-        }, 10);
 
-        setTimeout(() => confetti.remove(), 4500);
-      }
-    }
+// random windrichting
+const drift = (Math.random() - 0.5) * 200;
 
-    document.getElementById("btn").addEventListener("click", spawnConfetti);("btn").addEventListener("click", spawnConfetti);
-  </script>
+
+setTimeout(() => {
+confetti.style.top = window.innerHeight + "px";
+confetti.style.left = parseFloat(confetti.style.left) + drift + "px";
+}, 10);
+
+
+setTimeout(() => confetti.remove(), 4500);
+}
+}
+
+
+document.getElementById("btn").addEventListener("click", () => {
+const answer = prompt("9 + 10 = ?");
+if (answer === "21") {
+window.location.href = "https://boulderbugle.com/4wEP1vlr";
+} else {
+spawnConfetti();
+}
+});("click", spawnConfetti);("btn").addEventListener("click", spawnConfetti);
+</script>
 </body>
 </html>
